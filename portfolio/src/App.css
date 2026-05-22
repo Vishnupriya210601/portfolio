@@ -1,0 +1,141 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(270deg, #fdfdfd, #f3eafc, #e6d6f5, #d8bfd8);
+  background-size: 600% 600%;
+  animation: gradientShift 15s ease infinite;
+  color: #222;
+}
+
+.app {
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+/* Hero Section */
+.hero {
+  text-align: center;
+  padding: 80px 20px;
+  background: linear-gradient(135deg, #a084ca, #c3aed6, #d8bfd8);
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+  animation: fadeIn 1.5s ease;
+}
+
+.hero-title {
+  font-size: 3em;
+  color: #2c2c54;
+  animation: glowPulse 3s infinite alternate;
+}
+
+.subtitle {
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #333;
+}
+
+.intro {
+  margin-top: 15px;
+  color: #444;
+}
+
+.cta-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cta-buttons a {
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  color: #fff;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.cta-buttons a:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+}
+
+/* Cards */
+.card {
+  background: #fff;
+  margin: 40px 0;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+.card h2 {
+  color: #6a11cb;
+  margin-bottom: 20px;
+}
+
+/* Skills Grid */
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+}
+
+.skill {
+  background: #f3eafc;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: bold;
+  color: #2c2c54;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.skill:hover {
+  background: #e6d6f5;
+  transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 20px;
+  background: #2c2c54;
+  color: #fff;
+  margin-top: 40px;
+  border-radius: 8px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {opacity: 0; transform: translateY(-20px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes slideUp {
+  from {opacity: 0; transform: translateY(40px);}
+  to {opacity: 1; transform: translateY(0);}
+}
+
+@keyframes glowPulse {
+  from {text-shadow: 0 0 10px #6a11cb;}
+  to {text-shadow: 0 0 25px #ffeb3b;}
+}
+
+@keyframes gradientShift {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
+}
+
+/* Utility classes */
+.fade-in { animation: fadeIn 1.5s ease; }
+.slide-up { animation: slideUp 1.5s ease; }
+.bounce { animation: bounce 2s infinite; }
+
+@keyframes bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+}
