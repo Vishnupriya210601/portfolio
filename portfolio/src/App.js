@@ -7,7 +7,7 @@ function App() {
       {/* Hero Section */}
       <section className="hero">
         <h1 className="hero-title">Vishnupriya A</h1>
-        <p className="subtitle">React JS Developer | 3.8+ Years Experience</p>
+        <p className="subtitle">Frontend React Developer | 3.8+ Years Experience</p>
         <p className="intro">
           Passionate React developer with expertise in scalable UI development,
           performance optimization, and banking domain experience.
@@ -30,14 +30,12 @@ function App() {
         </div>
       </section>
 
-      {/* About Section */}
+      {/* Profile Summary Section */}
       <section className="card fade-in">
-        <h2>About</h2>
-        <ul>
-          <li>Banking & Financial Services domain experience</li>
-          <li>React.js expertise</li>
-          <li>Performance optimization & scalable UI development</li>
-        </ul>
+        <h2>Profile Summary</h2>
+        <p>
+          Frontend React developer with 3.8 years of experience, specializing in building responsive and optimized web applications. Working in the Banking and Financial Services (BFSI) domain, creating scalable apps with a focus on performance, secure coding, and seamless API integration.
+        </p>
       </section>
 
       {/* Skills Section */}
@@ -45,15 +43,16 @@ function App() {
         <h2>Skills</h2>
         <div className="skills-grid">
           {[
-            "React.js",
+            "HTML5",
+            "CSS3",
+            "JavaScript ES6+",
+            "TypeScript",
+            "React JS",
             "Redux Toolkit",
             "React Hooks",
             "Context API",
-            "JavaScript ES6+",
-            "HTML5 / CSS3",
-            "API Integration",
-            "Git / GitHub",
-            "Jenkins / CI-CD",
+            "GraphQL APIs",
+            "Apollo Client",
             "Responsive UI / Accessibility",
           ].map((skill) => (
             <div key={skill} className="skill bounce">{skill}</div>
@@ -61,32 +60,54 @@ function App() {
         </div>
       </section>
 
+      {/* Tools Section */}
+      <section className="card slide-up">
+        <h2>Tools</h2>
+        <div className="tools-grid">
+          {[
+            "Git",
+            "GitHub",
+            "Jenkins",
+            "CI/CD Pipelines",
+            "Azure Pipeline",
+            "Visual Studio Code",
+            "Postman",
+            "SonarQube"
+          ].map((tool) => (
+            <div key={tool} className="tool bounce">{tool}</div>
+          ))}
+        </div>
+      </section>
+
+
       {/* Experience Section */}
       <section className="card fade-in">
         <h2>Experience</h2>
-        <h3>Cognizant (2022–Present)</h3>
-        <p>US Bank Project</p>
+        <h3>Cognizant Technology Solutions (Aug 2022 – Present)</h3>
+        <p>US Bank Project | Banking & Financial Services Domain</p>
         <ul>
           <li>Developed SEO-optimized React apps with reusable components</li>
+          <li>Managed complex state using Redux Toolkit & Context API</li>
           <li>Integrated REST & GraphQL APIs with Apollo Client</li>
           <li>Improved performance by 20% via optimization & lazy loading</li>
-          <li>Implemented unit testing with Jest & React Testing Library</li>
-        </ul>
-      </section>
-
-      {/* Achievements & Certifications */}
-      <section className="card slide-up">
-        <h2>Achievements & Certifications</h2>
-        <ul>
-          <li>🏆 R&R award from US Bank Client</li>
-          <li>📜 Udemy certifications in React, Redux, JavaScript & TypeScript</li>
+          <li>Implemented unit testing with Jest & React Testing Library (25% defect reduction)</li>
+          <li>Built responsive, accessible UIs following WCAG standards</li>
+          <li>Collaborated in Agile/Scrum ceremonies and mentored junior developers</li>
         </ul>
       </section>
 
       {/* Education Section */}
       <section className="card fade-in">
         <h2>Education</h2>
-        <p>Kongu Engineering College — B.E ECE | CGPA 8.84</p>
+        <p>Kongu Engineering College — B.E Electronics & Communication Engineering | CGPA 8.84</p>
+      </section>
+
+      {/* Contact Section */}
+      <section className="card fade-in">
+        <h2>Contact</h2>
+        <p>Email: <a href="mailto:vishnupriyaarumugam2106@gmail.com">vishnupriyaarumugam2106@gmail.com</a></p>
+        <p>Phone: <a href="tel:+916382602322">+91 6382602322</a></p>
+        <p>Location: Chennai, Tamil Nadu</p>
       </section>
 
       {/* Footer */}

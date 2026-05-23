@@ -7,6 +7,10 @@ body {
   color: #222;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .app {
   max-width: 1000px;
   margin: auto;
@@ -17,10 +21,10 @@ body {
 .hero {
   text-align: center;
   padding: 80px 20px;
-  background: linear-gradient(135deg, #a084ca, #c3aed6, #d8bfd8);
+  background: linear-gradient(135deg, #a084ca, #c3aed6, #d8bfd8, #f3eafc);
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
-  animation: fadeIn 1.5s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
+  animation: fadeIn 1.5s ease, floatUp 6s ease-in-out infinite;
 }
 
 .hero-title {
@@ -30,18 +34,21 @@ body {
 }
 
 .subtitle {
-  font-size: 1.2em;
+  font-size: 1.3em;
   font-weight: bold;
   color: #333;
+  animation: slideUp 1.5s ease;
 }
 
 .intro {
   margin-top: 15px;
   color: #444;
+  font-size: 1.1em;
+  line-height: 1.6;
 }
 
 .cta-buttons {
-  margin-top: 20px;
+  margin-top: 25px;
   display: flex;
   justify-content: center;
   gap: 20px;
@@ -49,17 +56,18 @@ body {
 
 .cta-buttons a {
   padding: 12px 24px;
-  background: linear-gradient(135deg, #6a11cb, #2575fc);
+  background: linear-gradient(135deg, #6a11cb, #2575fc, #00c6ff);
   color: #fff;
   text-decoration: none;
   border-radius: 8px;
   font-weight: bold;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.4s ease;
 }
 
 .cta-buttons a:hover {
-  transform: scale(1.1);
-  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transform: scale(1.15) rotate(-2deg);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.35);
+  background: linear-gradient(135deg, #2575fc, #6a11cb, #ff6ec4);
 }
 
 /* Cards */
@@ -69,11 +77,30 @@ body {
   padding: 30px;
   border-radius: 12px;
   box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.2);
 }
 
 .card h2 {
   color: #6a11cb;
   margin-bottom: 20px;
+  position: relative;
+  animation: fadeIn 1.5s ease;
+}
+
+.card h2::after {
+  content: "";
+  display: block;
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(135deg, #6a11cb, #2575fc, #ff6ec4);
+  margin-top: 8px;
+  border-radius: 2px;
+  animation: slideLine 2s infinite alternate;
 }
 
 /* Skills Grid */
@@ -84,28 +111,70 @@ body {
 }
 
 .skill {
-  background: #f3eafc;
+  background: linear-gradient(135deg, #f3eafc, #e6d6f5);
   padding: 12px;
   border-radius: 8px;
   text-align: center;
   font-weight: bold;
   color: #2c2c54;
-  transition: background 0.3s ease, transform 0.3s ease;
+  transition: background 0.4s ease, transform 0.4s ease;
 }
 
 .skill:hover {
-  background: #e6d6f5;
-  transform: translateY(-5px);
+  background: linear-gradient(135deg, #d8bfd8, #c3aed6);
+  transform: translateY(-8px) scale(1.05);
+}
+
+/* Tools Section */
+.tools-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.tool {
+  background: linear-gradient(135deg, #f0f4ff, #dce6ff);
+  color: #333;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, background 0.4s ease, box-shadow 0.4s ease;
+}
+
+.tool:hover {
+  transform: translateY(-6px) scale(1.05);
+  background: linear-gradient(135deg, #c3d9ff, #a5c8ff);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.2);
+  cursor: pointer;
+}
+
+/* Contact Links */
+.card a {
+  color: #2575fc;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.card a:hover {
+  text-decoration: underline;
+  color: #6a11cb;
 }
 
 /* Footer */
 .footer {
   text-align: center;
   padding: 20px;
-  background: #2c2c54;
+  background: linear-gradient(135deg, #6a11cb, #2575fc, #00c6ff);
   color: #fff;
   margin-top: 40px;
   border-radius: 8px;
+  font-weight: 500;
+  letter-spacing: 1px;
+  animation: fadeIn 2s ease;
 }
 
 /* Animations */
@@ -130,12 +199,22 @@ body {
   100% {background-position: 0% 50%;}
 }
 
-/* Utility classes */
-.fade-in { animation: fadeIn 1.5s ease; }
-.slide-up { animation: slideUp 1.5s ease; }
-.bounce { animation: bounce 2s infinite; }
-
 @keyframes bounce {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-8px); }
 }
+
+@keyframes floatUp {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+@keyframes slideLine {
+  from {width: 40px;}
+  to {width: 70px;}
+}
+
+/* Utility classes */
+.fade-in { animation: fadeIn 1.5s ease; }
+.slide-up { animation: slideUp 1.5s ease; }
+.bounce { animation: bounce 2s infinite; }
